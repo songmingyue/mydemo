@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../vue.js">
+        
+    </script>
+</head>
+<body>
+    <div id="app">
+        <label v-for="labels in item">{{labels.text}}  <input name='labes'  type="radio" :checked="picked" @click></label>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                item:[
+                    {'text':'第一个'},
+                    {text:'第二个'},
+                    {text:'第三个'},
+                ],
+                picked:true
+            },
+            methods: {
+                picked(){
+                    console.log(this.picked)
+                }
+            }
+        })
+    </script>
+</body>
+</html>
